@@ -36,11 +36,23 @@ public class UserServiceImpl implements UserService{
         userDAO.deleteUser(id);
     }
 
+    @Transactional
     public User updateUser(User user) {
         return userDAO.updateUser(user);
     }
 
+    @Transactional
     public User getUser(int id) {
         return userDAO.getUser(id);
+    }
+
+    @Transactional
+    public List<User> getUsers(Long page) {
+        return userDAO.getUsers(page);
+    }
+
+    @Transactional
+    public List<User> getUsers(String name) {
+        return userDAO.getUsers(name);
     }
 }

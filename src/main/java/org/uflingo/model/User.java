@@ -1,30 +1,31 @@
 package org.uflingo.model;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Timestamp;
 
-/**
- * Created by Алексей on 19.05.2017.
- */
 @Entity
-@Table(name = "USER")
+@Table(name = "user")
 public class User implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column
+    @Column(name = "name")
     private String name;
 
-    @Column
+    @Column(name = "age")
     private int age;
 
-    @Column
+    @Type(type = "org.hibernate.type.BooleanType")
+    @Column(name = "isAdmin")
     private boolean isAdmin;
 
-    @Column
-    private Date createDate;
+    @Column(name = "createdDate")
+    private Timestamp createDate;
 
     public void setId(int id) {
         this.id = id;
@@ -42,7 +43,7 @@ public class User implements Serializable {
         isAdmin = admin;
     }
 
-    public void setCreateDate(Date createDate) {
+    public void setCreateDate(Timestamp  createDate) {
         this.createDate = createDate;
     }
 
@@ -63,7 +64,7 @@ public class User implements Serializable {
         return isAdmin;
     }
 
-    public Date getCreateDate() {
+    public Timestamp getCreateDate() {
         return createDate;
     }
 }
