@@ -1,0 +1,27 @@
+DROP DATABASE IF EXISTS TEST;
+CREATE DATABASE TEST;
+USE TEST;
+DROP TABLE IF EXISTS `test`.`user`;
+
+CREATE TABLE USER (
+	`id` INT(8) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(25) NOT NULL,
+	`age` INT NOT NULL,
+	`isAdmin` bit NOT NULL,
+	`createdDate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into user(id,name,age,isAdmin) values(1,'First',1,0);
+insert into user(id,name,age,isAdmin) values(2,'Second',2,0);
+insert into user(id,name,age,isAdmin) values(3,'Third',3,0);
+insert into user(id,name,age,isAdmin) values(4,'Alex',20,1);
+insert into user(id,name,age,isAdmin) values(5,'Fedor',15,1);
+insert into user(id,name,age,isAdmin) values(6,'Teodor',46,0);
+insert into user(id,name,age,isAdmin) values(7,'Lenin',147,0);
+insert into user(id,name,age,isAdmin) values(8,'Stalin',139,0);
+insert into user(id,name,age,isAdmin) values(9,'Ceasar',45,0);
+insert into user(id,name,age,isAdmin) values(10,'Funtik',5,0);
+insert into user(id,name,age,isAdmin) values(11,'Puh',8,0);
+insert into user(id,name,age,isAdmin) values(12,'Apple',123,0);
+insert into user(id,name,age,isAdmin) values(13,'Snake',876,0);
